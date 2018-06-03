@@ -5,12 +5,11 @@ var port = 3000;
 var express = require('express');
 var app = module.exports = express();
 var renderHtml = require("./libs/renderHtml");
-var bodyParser = require('body-parser');
 
 app.response.constructor.prototype.renderHtml = renderHtml.render;
 app.set('views', './views');
 app.use("/public", express.static("./public"));
-app.use(bodyParser.urlencoded({ extended: false })); // for parsing application/x-www-form-urlencoded
+
 
 
 

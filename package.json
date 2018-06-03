@@ -1,7 +1,7 @@
 {
-  "name": "nodejs-web-app2",
+  "name": "nodejs-mvc",
   "version": "0.0.0",
-  "description": "NodejsWebApp2",
+  "description": "Nodejs-mvc",
   "main": "server.js",
   "author": "dell",
   "scripts": {
@@ -9,9 +9,16 @@
   },
   "license": "ISC",
   "dependencies": {
-    "body-parser": "^1.18.3",
     "ejs": "^2.6.1",
     "express": "^4.16.3"
   },
-  "devDependencies": {}
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/18320867985/nodejs-mvc.git"
+  },
+  "bugs": {
+    "url": "https://github.com/18320867985/nodejs-mvc/issues"
+  },
+  "homepage": "https://github.com/18320867985/nodejs-mvc#readme"
 }
