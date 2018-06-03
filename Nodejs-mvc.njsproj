@@ -29,6 +29,7 @@
     <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="controllers.js" />
     <Compile Include="controllers\home.js" />
     <Compile Include="controllers\user.js" />
     <Compile Include="libs\renderHtml.js" />

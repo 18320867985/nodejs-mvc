@@ -11,7 +11,7 @@ module.exports = function () {
     });
     app.get(controller + "/news", function (req, res) {
         // res.send(`name:${req.params.name}==id:${req.params.id}`);
-        res.renderHtml(res, controller + "/index.html", { lists: ["88888", "999999999"] });
+        res.renderHtml(res, controller + "/news.html", { lists: ["88888", "999999999"] });
 
     });
    

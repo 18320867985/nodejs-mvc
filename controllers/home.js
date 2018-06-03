@@ -12,7 +12,7 @@ module.exports = function () {
         });
     app.get(controller + "/news", function (req, res) {
         // res.send(`name:${req.params.name}==id:${req.params.id}`);
-        res.renderHtml(res, controller + "/index.html", { lists: ["a", "b"] });
+        res.renderHtml(res, controller + "/index", { lists: ["a", "b"] });
        
     });
     // 

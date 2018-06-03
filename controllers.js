@@ -1,5 +1,4 @@
-﻿
-/*注册控制器*/
+﻿/*注册控制器*/
 
 module.exports = function () {
 
