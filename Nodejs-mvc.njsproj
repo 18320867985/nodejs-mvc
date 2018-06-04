@@ -33,7 +33,7 @@
     <Compile Include="controllers\home.js" />
     <Compile Include="controllers\user.js" />
     <Compile Include="libs\renderHtml.js" />
-    <Compile Include="libs\urlPath.js">
+    <Compile Include="libs\routerPath.js">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="server.js" />

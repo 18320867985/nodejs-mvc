@@ -1,22 +1,22 @@
 ﻿
 const app = require("../server");
 const path = require("path");
-const urlPath = require("../libs/urlPath");
+const routerPath = require("../libs/routerPath");
 
 module.exports = function () {
 
-    urlPath.controller = "home";
+    routerPath.controller = "home";
     // get
-    var index = urlPath.getPath("index");
-    app.get(urlPath.root + index, function (req, res) {
+    var index = routerPath.getPath("index");
+    app.get(routerPath.root + index, function (req, res) {
        
         res.render(index, { lists: ["aaa", "bbbb"] });
      
 
     });
 
-    var  news = urlPath.getPath("news");
-    app.get(urlPath.root + news, function (req, res) {
+    var news = routerPath.getPath("news");
+    app.get(routerPath.root + news, function (req, res) {
         res.render(news, { lists: ["aaa", "bbbb"] });
      
     });
