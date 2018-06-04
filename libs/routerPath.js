@@ -2,17 +2,25 @@
     root: "/",
     controller: "home",
     action: "index",
-    getPath(...args) {
-
+    setRouter(...args) {
+        var root = this.root;
+        var action = this.action;
+        var controller = this.controller;
         if (args.length === 1) {
-            this.action = args[0];
+            action = args[0];
         }
         if (args.length === 2) {
-            this.controller = args[0];
-            this.action = args[1];
+            controller = args[0];
+            action = args[1];
         }
-
-        return this.controller + "/" + this.action;
+    
+        return {
+            root: root,
+            controller:controller,
+            action: action,
+            routerUrl: root+ controller + "/" + action,
+            htmlUrl: controller + "/" + action
+        }
     }
 }
 

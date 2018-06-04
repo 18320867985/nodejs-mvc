@@ -5,7 +5,7 @@ module.exports = function () {
     // controller home
     require("./controllers/home")();
 
-    // controller home
+    // controller user
     require("./controllers/user")();
 
 }
