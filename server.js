@@ -4,10 +4,11 @@ var hostname = "127.0.0.1";
 var port = 3000;
 var express = require('express');
 var app = module.exports = express();
-var renderHtml = require("./libs/renderHtml");
 
-app.response.constructor.prototype.renderHtml = renderHtml.render;
 app.set('views', './views');
+app.engine('.html', require('ejs').__express);
+app.set('view engine', 'html');
+
 app.use("/public", express.static("./public"));
 
 /*×¢²á¿ØÖÆÆ÷*/

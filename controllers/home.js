@@ -1,34 +1,28 @@
 ﻿
 const app = require("../server");
-var controller = "/home";
+const path = require("path");
+const urlPath = require("../libs/urlPath");
 
 module.exports = function () {
 
+    urlPath.controller = "home";
     // get
-    app.get(controller + "/index", function (req, res) {
-        
-             // res.send(`name:${req.params.name}==id:${req.params.id}`);
-        res.renderHtml(res, controller+"/index", { lists: ["a", "b"] });
-        });
-    app.get(controller + "/news", function (req, res) {
-        // res.send(`name:${req.params.name}==id:${req.params.id}`);
-        res.renderHtml(res, controller + "/index", { lists: ["a", "b"] });
+    var index = urlPath.getPath("index");
+    app.get(urlPath.root + index, function (req, res) {
        
+        res.render(index, { lists: ["aaa", "bbbb"] });
+     
+
     });
-    // 
-    app.post(function (req, res) {
-        res.send("post--home");
+
+    var  news = urlPath.getPath("news");
+    app.get(urlPath.root + news, function (req, res) {
+        res.render(news, { lists: ["aaa", "bbbb"] });
+     
+    });
+
     
-    })
-
-    app.put(function (req, res) {
-            res.send("put--home");
-    })
-
-    app.delete(function (req, res) {
-            res.send("delete--home");
-            
-    });
+   
 
 };
 

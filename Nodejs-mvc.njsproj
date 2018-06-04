@@ -33,11 +33,15 @@
     <Compile Include="controllers\home.js" />
     <Compile Include="controllers\user.js" />
     <Compile Include="libs\renderHtml.js" />
+    <Compile Include="libs\urlPath.js">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="server.js" />
     <Content Include="package.json" />
     <Content Include="public\css\main.css" />
     <Content Include="public\img\1111.jpg" />
     <Content Include="README.md" />
+    <Content Include="views\home\news.html" />
     <Content Include="views\home\index.html" />
     <Content Include="views\user\index.html" />
     <Content Include="views\user\news.html" />
