@@ -1,4 +1,6 @@
-﻿let urlPath = {
+﻿/*路由控制器的路径*/
+
+let urlPath = {
     root: "/",
     controller: "home",
     action: "index",
@@ -16,10 +18,20 @@
     
         return {
             root: root,
-            controller:controller,
+            controller: controller,
             action: action,
-            routerUrl: root+ controller + "/" + action,
-            htmlUrl: controller + "/" + action
+            routerUrl: (url) => {
+                if (typeof url === "string") {
+                    return root + url.replace(/^\/+/, "");
+                }
+                return root + controller + "/" + action
+            },
+            htmlUrl: (url) => {
+                if (typeof url === "string") {
+                    return url.replace(/^\/+/, "");
+                }
+                return controller + "/" + action;
+            }
         }
     }
 }
