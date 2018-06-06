@@ -32,11 +32,20 @@
     <Compile Include="controllers.js" />
     <Compile Include="controllers\home.js" />
     <Compile Include="controllers\user.js" />
+    <Compile Include="libs\dbHelp.js">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="libs\orm.js">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="libs\renderHtml.js" />
     <Compile Include="libs\routerPath.js">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="server.js" />
+    <Content Include="config.js">
+      <SubType>Code</SubType>
+    </Content>
     <Content Include="package.json" />
     <Content Include="public\css\main.css" />
     <Content Include="public\img\1111.jpg" />
@@ -45,6 +54,9 @@
     <Content Include="views\home\index.html" />
     <Content Include="views\user\index.html" />
     <Content Include="views\user\news.html" />
+    <Content Include="views\user\test.html">
+      <SubType>Code</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="controllers\" />
