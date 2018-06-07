@@ -44,9 +44,10 @@ exports.findByPaging = function (collectionName, conditionObj, skip, limit) {
                         client.close();
                         reject(err);
                         return;
+                    } else {
+                        resolve(data);
+                        client.close();
                     }
-                    resolve(data);
-                    client.close();
                 });
 
             }
@@ -73,8 +74,10 @@ exports.find = function (collectionName, conditionObj) {
                         client.close();
                         reject(err);
                     }
-                    resolve(data);
-                    client.close();
+                    else {
+                        resolve(data);
+                        client.close();
+                    }
                 });
             }
 
@@ -99,8 +102,10 @@ exports.count = function (collectionName, conditionObj) {
                         client.close();
                         reject(err);
                     }
-                    resolve(data);
-                    client.close();
+                    else {
+                        resolve(data);
+                        client.close();
+                    }
 
                 });
             }
@@ -153,8 +158,10 @@ exports.updateMany = function (collectionName, conditionObj, updateObj) {
                         client.close();
                         reject(err);
                     }
-                    resolve(data.result.n);
-                    client.close();
+                    else {
+                        resolve(data);
+                        client.close();
+                    }
 
                 });
             }
@@ -180,8 +187,10 @@ exports.delete = function (collectionName, conditionObj) {
                         client.close();
                         reject(err);
                     }
-                    resolve(data.result.n);
-                    client.close();
+                    else {
+                        resolve(data);
+                        client.close();
+                    }
 
                 });
             }
@@ -207,8 +216,10 @@ exports.deleteMany = function (collectionName, conditionObj) {
                         client.close();
                         reject(err);
                     }
-                    resolve(data.result.n);
-                    client.close();
+                    else {
+                        resolve(data);
+                        client.close();
+                    }
 
                 });
             }
@@ -234,8 +245,10 @@ exports.insert = function (collectionName, insertObj) {
                         client.close();
                         reject(err);
                     }
-                    resolve(data.result.n);
-                    client.close();
+                    else {
+                        resolve(data);
+                        client.close();
+                    }
 
                 });
             }
@@ -261,8 +274,10 @@ exports.insertMany = function (collectionName, insertObjs) {
                         client.close();
                         reject(err);
                     }
-                    resolve(data.result.n);
-                    client.close();
+                    else {
+                        resolve(data);
+                        client.close();
+                    }
 
                 });
             }
