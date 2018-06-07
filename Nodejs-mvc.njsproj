@@ -29,17 +29,26 @@
     <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="BLL\baseBLL\Cat.js">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BLL\bll.js">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="controllers.js" />
     <Compile Include="controllers\home.js" />
     <Compile Include="controllers\user.js" />
     <Compile Include="libs\dbHelp.js">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="libs\orm.js">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="libs\renderHtml.js" />
     <Compile Include="libs\routerPath.js">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="model\models.js">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="model\baseModel\cat.js">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="server.js" />
@@ -59,8 +68,12 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="BLL\baseBLL\" />
     <Folder Include="controllers\" />
     <Folder Include="libs\" />
+    <Folder Include="model\" />
+    <Folder Include="model\baseModel\" />
+    <Folder Include="BLL\" />
     <Folder Include="public\" />
     <Folder Include="public\css\" />
     <Folder Include="public\img\" />
