@@ -5,11 +5,20 @@ const routerPath = require("../libs/routerPath");
 module.exports = function () {
 
     routerPath.controller = "user";
-   
+
+    app.use(routerPath.root, function (req, res,next) {
+        if (!req.session.login) {
+            res.redirect("/home/index");
+        } else {
+            next();
+        }
+
+    });
+
     // get
     var index = routerPath.setRouter();
     app.get(index.routerUrl(), function (req, res) {
-
+      
         res.render(index.htmlUrl(), { lists: ["aaa222", "bbbb222"] });
     });
 

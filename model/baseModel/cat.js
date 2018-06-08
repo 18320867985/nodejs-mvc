@@ -8,10 +8,7 @@ var CatSchema = new Schema({
     age: Number
 });
 
-CatSchema.methods.test = function () {
-    console.log(this.name);
-}
-
 
 var Cat = db.model("Cat", CatSchema);
+
 module.exports = Cat;

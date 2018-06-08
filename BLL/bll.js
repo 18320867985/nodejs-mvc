@@ -1,3 +1,3 @@
 ﻿
-exports.Cat = require("./baseBLL/Cat");
+exports.Cat = require("./baseBLL/cat");
 

@@ -29,7 +29,7 @@
     <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="BLL\baseBLL\Cat.js">
+    <Compile Include="BLL\baseBLL\cat.js">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="BLL\bll.js">
@@ -52,6 +52,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="server.js" />
+    <Compile Include="test.js">
+      <SubType>Code</SubType>
+    </Compile>
     <Content Include="config.js">
       <SubType>Code</SubType>
     </Content>
