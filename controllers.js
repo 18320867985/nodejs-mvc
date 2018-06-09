@@ -8,5 +8,8 @@ module.exports = function () {
     // controller user
     require("./controllers/user")();
 
+    // controller test
+    require("./controllers/test")();
+
 }
 

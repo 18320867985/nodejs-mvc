@@ -30,6 +30,14 @@ module.exports = function () {
      
     });
 
+    //get
+    var ul = routerPath.setRouter("ul");
+    app.get(ul.routerUrl(), function (req, res) {
+
+        res.render(ul.htmlUrl(), { lists: ["hqs", "js高手"] });
+
+    });
+
     app.post(index.routerUrl(), function (req, res) {
         var body = req.body;
        

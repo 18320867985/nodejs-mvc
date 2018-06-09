@@ -1,19 +1,18 @@
 ﻿const app = require("../server");
 const path = require("path");
 const routerPath = require("../libs/routerPath");
+routerPath.controller = "user";
 
 module.exports = function () {
 
-    routerPath.controller = "user";
+    //app.use(routerPath.root, function (req, res,next) {
+    //    if (!req.session.login) {
+    //        res.redirect("/home/index");
+    //    } else {
+    //        next();
+    //    }
 
-    app.use(routerPath.root, function (req, res,next) {
-        if (!req.session.login) {
-            res.redirect("/home/index");
-        } else {
-            next();
-        }
-
-    });
+    //});
 
     // get
     var index = routerPath.setRouter();
