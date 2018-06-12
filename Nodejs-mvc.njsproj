@@ -56,7 +56,8 @@
     </Compile>
     <Compile Include="public\js\include.min.js" />
     <Compile Include="server.js" />
-    <Compile Include="test.js">
+    <Compile Include="test\test.js" />
+    <Compile Include="test\mapReduce.js">
       <SubType>Code</SubType>
     </Compile>
     <Content Include="config.js">
@@ -82,6 +83,7 @@
     <Folder Include="model\" />
     <Folder Include="model\baseModel\" />
     <Folder Include="BLL\" />
+    <Folder Include="test\" />
     <Folder Include="public\" />
     <Folder Include="public\css\" />
     <Folder Include="public\img\" />
