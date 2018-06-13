@@ -1,12 +1,12 @@
-﻿var model = require("../model/models");
+﻿//var model = require("../model/models");
 
 //model.Cat.find({ name: "mmm2", age: { $gt: 10 } }, {age:0}).then(function (data) {
 //    console.log(data);
 //});
  
-var cat = new model.Cat({
-    name: "mmm2", age:"22", sex: 22
-});
+//var cat = new model.Cat({
+//    name: "mmm2", age:"22", sex: 22
+//});
 //cat.save(function (err, data) {
 //    if (err) {
 //        console.log(err)
@@ -83,4 +83,11 @@ var cat = new model.Cat({
 //}, {a:0,b:"b"});
 
 //console.log(arrs2)
+const path = require("path");
+
+//console.log(path.join( __dirname , "../model/test.js"));
+
+//var basename = path.extname('C:\\temp\\myfile.html');
+//console.log(basename);
+//console.log(path.join('/foo', 'bar', 'baz/asdf', 'quux'));
 

@@ -1,10 +1,7 @@
 ﻿var model = require("../model/models");
 
-
-
 model.Cat.mapReduce({
     map: function () {
-
         return emit(this.sex, { age: this.age, count: 1, avg: this.age, sum: this.age });
     },
     reduce: function (key, v) {

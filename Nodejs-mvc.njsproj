@@ -54,7 +54,11 @@
     <Compile Include="model\baseModel\cat.js">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="public\js\html5FlieUpload.js" />
+    <Compile Include="public\js\html5shiv.js" />
     <Compile Include="public\js\include.min.js" />
+    <Compile Include="public\js\jquery-1.11.0.min.js" />
+    <Compile Include="public\js\respond.min.js" />
     <Compile Include="server.js" />
     <Compile Include="test\test.js" />
     <Compile Include="test\mapReduce.js">
@@ -64,9 +68,10 @@
       <SubType>Code</SubType>
     </Content>
     <Content Include="package.json" />
+    <Content Include="public\css\flieUpload.css" />
     <Content Include="public\css\main.css" />
-    <Content Include="public\img\1111.jpg" />
     <Content Include="README.md" />
+    <Content Include="test\upload.html" />
     <Content Include="views\home\ul.html" />
     <Content Include="views\home\news.html" />
     <Content Include="views\home\index.html" />

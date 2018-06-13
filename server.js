@@ -34,6 +34,7 @@ app.set('view engine', 'html');
 
 // static pages
 app.use("/public", express.static("./public"));
+app.use("/test", express.static("./test"));
 
 /*constrollers*/
 require("./controllers")();

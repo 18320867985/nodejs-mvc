@@ -1,0 +1,109 @@
+﻿<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../public/css/flieUpload.css" />
+	</head>
+
+	<body>
+
+		<div class="progress-box">
+
+			<!-- 点击提交按钮-->
+			<input type="button" name="up" id="up" value="上传" />
+			<input class=" fileUp v-hide-text-index" type="file" name="" id="fileUp" value="" />
+
+			<!--进度条-->
+			<div class="progress-all v-hide">
+				<div class="progress-now"></div>
+				<div class="progress-num">0%</div>
+			</div>
+
+			<img class="img"   alt="" />
+		</div>
+		
+		<!--<script src="js/jquery-1.11.0.min.js" type="text/javascript" charset="utf-8"></script>-->
+		<script src="/public/js/jquery-1.11.0.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="/public/js/html5FlieUpload.js" type="text/javascript" charset="utf-8"></script><br />
+		<script type="text/javascript">
+			
+			/***文件上传  start***/  
+				
+				$("#up").on("click", function(e) {
+					
+					e.stopPropagation();
+					e.preventDefault();
+					var p = $(this).parents(".progress-box");
+					
+					// 点击文件上传框
+					$(".fileUp", p).click();
+
+				}); 
+				
+				// 文件上传框值变化
+				$(".fileUp").change(function() {
+					
+					fileupff(this);
+					
+				});
+				
+				var fileupff = function(obj) {
+
+					var $img = $(obj).parents(".progress-box").find(".img");
+					var $propress = $(obj).parents(".progress-box").find(".progress-all");
+					$propress.show();
+				
+					
+					// 是否支持html5 文件上传
+					if(typeof obj.files==="undefined"){
+						alert("不支持html5 文件上传,请升级你的浏览器  \n not support html5 ");
+						return ;
+					}
+					
+					var file = obj.files[0];
+					
+					h5File.upload({
+						data: file, //选择的文件
+						url: "/test/upload", //上传网址
+						outTime: 30000,
+						el: $(obj), //当前element
+						size: 300*1000000, //1m=1000000
+						contentType:false,
+						seccess: function(data) {
+
+                            $propress.hide();
+                            var url = "../" + $.trim(data.url);
+                           // $img.show();
+                          
+                            $($img).attr("src", url)
+                 
+							//$(".file-txt").val(url);
+							//vd1.check(); // 重新检测验证
+						
+
+						}, //成功回调
+						error: function() {
+
+							$propress.hide();
+							// 发布删掉
+							var url = "images/板块图片2.png";
+							$img.show();
+							$img.attr("src", url)
+							$(".file-txt").val(url);
+							//vd1.check(); // 重新检测验证
+						
+							//alert("上传发生错误")
+						} //错误回调
+
+					}); //调用上传接口
+
+				};
+				
+				/***文件上传 end***/
+		
+		</script>
+	</body>
+
+</html>
