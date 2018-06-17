@@ -12,7 +12,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>96c2b994-88fe-45ac-8efd-47df30bad002</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>server.js</StartupFile>
+    <StartupFile>test.js</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -41,6 +41,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="controllers\user.js" />
+    <Compile Include="libs\crypto.js">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="libs\dbHelp.js">
       <SubType>Code</SubType>
     </Compile>
@@ -60,6 +63,7 @@
     <Compile Include="public\js\jquery-1.11.0.min.js" />
     <Compile Include="public\js\respond.min.js" />
     <Compile Include="server.js" />
+    <Compile Include="test.js" />
     <Compile Include="test\test.js" />
     <Compile Include="test\mapReduce.js">
       <SubType>Code</SubType>

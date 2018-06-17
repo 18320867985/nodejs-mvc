@@ -5,6 +5,7 @@
   "main": "server.js",
   "author": "dell",
   "scripts": {
+    "test": "node test",
     "start": "node server.js"
   },
   "license": "ISC",

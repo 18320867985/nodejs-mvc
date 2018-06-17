@@ -83,11 +83,62 @@
 //}, {a:0,b:"b"});
 
 //console.log(arrs2)
-const path = require("path");
+//const path = require("path");
 
 //console.log(path.join( __dirname , "../model/test.js"));
 
 //var basename = path.extname('C:\\temp\\myfile.html');
 //console.log(basename);
 //console.log(path.join('/foo', 'bar', 'baz/asdf', 'quux'));
+
+//var m = Math.max(...[24, 4, 5, 6]);
+//console.log(m);
+
+
+//var http = require("http");
+
+//var server=http.createServer((req, res) => {
+//    res.writeHead(200, { "content-Type": "text/html" });
+//    res.end("sever end");
+
+//});
+
+//server.listen(3000,"127.0.0.1",function () {
+//    console.log("sever start port http:\\\\127.0.0.1:3000");
+//});
+//server.on("connection", function () {
+
+//    console.log("concetion");
+//});
+
+//server.on("request", function () {
+
+//    console.log("request");
+//});
+
+var path = require("path");
+var fs = require("fs");
+
+
+exports.test= function() {
+    function rd(ulr) {
+        return new Promise(function (resolve, reject) {
+            var p = path.join(__dirname, ulr);
+            fs.readFile(p, "utf-8", function (err, data) {
+                if (err) {
+                    throw new Error(err);
+                } else {
+                    resolve(data)
+                }
+                //  console.log(data)
+            });
+        });
+
+    }
+
+    var res = Promise.all([rd("../views/home/ul.html"), rd("../views/home/index.html"), rd("../views/home/news.html")]);
+    res.then(function (data) {
+        console.log(data);
+    }).catch();
+}
 
