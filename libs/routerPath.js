@@ -1,13 +1,16 @@
 ﻿/*路由控制器的路径*/
+var path = require("path");
 
 let urlPath = {
     root: "/",
+    area:"",
     controller: "home",
     action: "index",
     setRouter(...args) {
         var root = this.root;
         var action = this.action;
         var controller = this.controller;
+        var area = this.area.trim();
         if (args.length === 1) {
             action = args[0];
         }
@@ -30,7 +33,11 @@ let urlPath = {
                 if (typeof url === "string") {
                     return url.replace(/^\/+/, "");
                 }
-                return controller + "/" + action;
+                if (area) {
+                    return  area+"Views" + "/" + controller + "/" + action;
+                }
+                return  controller + "/" + action;
+               
             }
         }
     }

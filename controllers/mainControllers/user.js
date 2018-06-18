@@ -1,6 +1,6 @@
-﻿const app = require("../server");
+﻿const app = require("./_mainRouter");
 const path = require("path");
-const routerPath = require("../libs/routerPath");
+const routerPath = require("../../libs/routerPath");
 routerPath.controller = "user";
 
 module.exports = function () {

@@ -1,15 +1,15 @@
-﻿
-const app = require("../server");
-const path = require("path");
-const routerPath = require("../libs/routerPath");
+﻿const path = require("path");
+const app = require("./_mainRouter");
+const routerPath = require("../../libs/routerPath");
 //var BLL = require("../BLL/bll");
 
+routerPath.area = "main";
 routerPath.controller = "home";
 module.exports = function () {
     
     // get
     var index = routerPath.setRouter("index");
-    app.get([index.root, index.routerUrl()], function (req, res) {
+    app.get( index.routerUrl(), function (req, res) {
        // var cat = new BLL.Cat();
         //cat.create({ name: "hqs", age: 12 }, function (err, data) {
         //    data.age = 28;
@@ -17,8 +17,8 @@ module.exports = function () {
         //    console.log(data);
         //});
        // req.session.cookie.
-        
-        res.render(index.htmlUrl(), { lists: ["aaa", "bbbb"] });
+ 
+          res.render(index.htmlUrl(), { lists: ["aaa", "bbbb"] });
     });
 
 

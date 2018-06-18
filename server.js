@@ -32,17 +32,30 @@ app.set('views', './views');
 app.engine('.html', require('ejs').__express);
 app.set('view engine', 'html');
 
+
 // static pages
 app.use("/public", express.static("./public"));
 app.use("/test", express.static("./test"));
 
-/*constrollers*/
-require("./controllers")();
+// static html
+//app.use("/", express.static("./html"));
+
+// Ç°¶Ë
+app.use("/", require("./controllers/mainControllers/_mainRouter"));
+
+// ºó¶Ë
+app.use("/admin", require("./controllers/adminControllers/_adminRouter"));
+
+// api
+app.use("/api", require("./controllers/apiControllers/_apiRouter"));
+
 
 // 404  page
 app.use(function (req, res) {
     res.status(404).send("404 Request Page Not Found!");
+   // res.end();
 });
+
 
 //  start listen server
 app.listen(port, hostname, function () {

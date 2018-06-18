@@ -68,5 +68,7 @@ var crypto = require("./libs/crypto");
 var assert = require("assert");
 
 var str = crypto.md5.md5ByString("123");
-console.log(assert.deepStrictEqual("2","2"));
+console.log(assert.deepStrictEqual("2", "2"));
+
+Buffer
 

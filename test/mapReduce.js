@@ -1,4 +1,4 @@
-﻿var model = require("../model/models");
+﻿var model = require("../models/models");
 
 model.Cat.mapReduce({
     map: function () {

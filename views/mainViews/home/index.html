@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+
+<html   lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+	 <link href="/public/css/main.css" rel="stylesheet" />	
+</head>
+<body>
+    <h1>home-index</h1>
+   
+    <ul>
+        <% lists.forEach(function(item){ %>
+      
+        <li><%-item%></li>
+        <%})%>
+    </ul>
+    <hr />
+    <form action="index" method="post">
+        <input type="text" name="name" value="" /> <br />
+        <input type="password" name="pwd" value="" /> <br />
+        <input type="submit" value="submit" /> <br />
+    </form>
+    999999999999999999999
+</body>
+</html>
