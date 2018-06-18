@@ -30,28 +30,26 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="controllers\adminControllers\home.js" />
-    <Compile Include="controllers\adminControllers\_adminControllers.js" />
-    <Compile Include="controllers\adminControllers\_adminRouter.js" />
+    <Compile Include="controllers\adminControllers\_allControllers.js" />
+    <Compile Include="controllers\adminControllers\_allRouters.js" />
     <Compile Include="controllers\adminControllers\_routerPath.js">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="controllers\apiControllers\home.js" />
-    <Compile Include="controllers\apiControllers\_apiControllers.js" />
-    <Compile Include="controllers\apiControllers\_apiRouter.js" />
+    <Compile Include="controllers\apiControllers\_allControllers.js" />
+    <Compile Include="controllers\apiControllers\_allRouters.js" />
     <Compile Include="controllers\apiControllers\_routerPath.js" />
-    <Compile Include="controllers\mainControllers\_mainRouter.js">
-      <SubType>Code</SubType>
-    </Compile>
+    <Compile Include="controllers\webControllers\_allControllers.js" />
+    <Compile Include="controllers\webControllers\_allRouters.js" />
+    <Compile Include="controllers\webControllers\_routerPath.js" />
     <Compile Include="BLL\baseBLL\cat.js">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="BLL\baseBLL\_bll.js">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="controllers\mainControllers\_mainControllers.js" />
-    <Compile Include="controllers\mainControllers\home.js" />
-    <Compile Include="controllers\mainControllers\user.js" />
-    <Compile Include="controllers\mainControllers\_routerPath.js" />
+    <Compile Include="controllers\webControllers\home.js" />
+    <Compile Include="controllers\webControllers\user.js" />
     <Compile Include="libs\crypto.js">
       <SubType>Code</SubType>
     </Compile>
@@ -91,17 +89,17 @@
     <Content Include="README.md" />
     <Content Include="test\upload.html" />
     <Content Include="views\adminViews\home\index.html" />
-    <Content Include="views\mainViews\home\ul.html" />
-    <Content Include="views\mainViews\home\news.html" />
-    <Content Include="views\mainViews\home\index.html" />
-    <Content Include="views\mainViews\user\index.html" />
-    <Content Include="views\mainViews\user\news.html" />
+    <Content Include="views\webViews\home\ul.html" />
+    <Content Include="views\webViews\home\news.html" />
+    <Content Include="views\webViews\home\index.html" />
+    <Content Include="views\webViews\user\index.html" />
+    <Content Include="views\webViews\user\news.html" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="BLL\baseBLL\" />
     <Folder Include="controllers\" />
     <Folder Include="controllers\adminControllers\" />
-    <Folder Include="controllers\mainControllers\" />
+    <Folder Include="controllers\webControllers\" />
     <Folder Include="controllers\apiControllers\" />
     <Folder Include="html\master\" />
     <Folder Include="libs\" />
@@ -117,10 +115,10 @@
     <Folder Include="views\" />
     <Folder Include="views\adminViews\home\" />
     <Folder Include="views\adminViews\master\" />
-    <Folder Include="views\mainViews\home\" />
-    <Folder Include="views\mainViews\" />
-    <Folder Include="views\mainViews\master\" />
-    <Folder Include="views\mainViews\user\" />
+    <Folder Include="views\webViews\home\" />
+    <Folder Include="views\webViews\" />
+    <Folder Include="views\webViews\master\" />
+    <Folder Include="views\webViews\user\" />
     <Folder Include="views\adminViews\" />
   </ItemGroup>
   <!-- Do not delete the following Import Project.  While this appears to do nothing it is a marker for setting TypeScript properties before our import that depends on them. -->

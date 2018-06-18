@@ -1,4 +1,4 @@
-﻿/*注册控制器*/
+﻿/*api注册控制器*/
 
 module.exports = function () {
 

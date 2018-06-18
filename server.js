@@ -41,13 +41,13 @@ app.use("/test", express.static("./test"));
 //app.use("/", express.static("./html"));
 
 // Ç°¶Ë
-app.use("/", require("./controllers/mainControllers/_mainRouter"));
+app.use("/", require("./controllers/webControllers/_allRouters"));
 
 // ºó¶Ë
-app.use("/admin", require("./controllers/adminControllers/_adminRouter"));
+app.use("/admin", require("./controllers/adminControllers/_allRouters"));
 
 // api
-app.use("/api", require("./controllers/apiControllers/_apiRouter"));
+app.use("/api", require("./controllers/apiControllers/_allRouters"));
 
 
 // 404  page

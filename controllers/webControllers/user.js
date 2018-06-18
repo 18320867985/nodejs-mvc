@@ -1,18 +1,9 @@
-﻿const app = require("./_mainRouter");
+﻿const app = require("./_allRouters");
 const routerPath = require("./_routerPath");
 var BLL = require("../../BLL/baseBLL/_bll");
 
 routerPath.controller = "user";
 module.exports = function () {
-
-    //app.use(routerPath.root, function (req, res,next) {
-    //    if (!req.session.login) {
-    //        res.redirect("/home/index");
-    //    } else {
-    //        next();
-    //    }
-
-    //});
 
     // get
     var index = routerPath.setRouter();

@@ -1,5 +1,5 @@
 ﻿
-const app = require("./_mainRouter");
+const app = require("./_allRouters");
 const routerPath = require("./_routerPath");
 var BLL = require("../../BLL/baseBLL/_bll");
 

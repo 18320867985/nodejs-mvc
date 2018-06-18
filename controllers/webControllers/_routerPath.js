@@ -1,6 +1,6 @@
 ﻿
-/*路由路径*/
+/*api路由路径*/
 const routerPath = require("../../libs/routerPath");
-routerPath.area = "";
+routerPath.area = "webViews";
 
 module.exports = routerPath;

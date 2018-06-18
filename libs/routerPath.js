@@ -34,7 +34,7 @@ let urlPath = {
                     return url.replace(/^\/+/, "");
                 }
                 if (area) {
-                    return  area+"Views" + "/" + controller + "/" + action;
+                    return  area+ "/" + controller + "/" + action;
                 }
                 return  controller + "/" + action;
                
