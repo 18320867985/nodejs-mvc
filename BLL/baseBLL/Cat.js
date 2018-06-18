@@ -1,4 +1,4 @@
-﻿var model = require("../../model/models");
+﻿var model = require("../../models/baseModels/_models");
 
 var Cat = class Cat {
     async find(id) {
@@ -11,4 +11,5 @@ var Cat = class Cat {
     }
 
 }
+
 module.exports = Cat;

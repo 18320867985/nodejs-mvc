@@ -32,21 +32,26 @@
     <Compile Include="controllers\adminControllers\home.js" />
     <Compile Include="controllers\adminControllers\_adminControllers.js" />
     <Compile Include="controllers\adminControllers\_adminRouter.js" />
+    <Compile Include="controllers\adminControllers\_routerPath.js">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="controllers\apiControllers\home.js" />
     <Compile Include="controllers\apiControllers\_apiControllers.js" />
     <Compile Include="controllers\apiControllers\_apiRouter.js" />
+    <Compile Include="controllers\apiControllers\_routerPath.js" />
     <Compile Include="controllers\mainControllers\_mainRouter.js">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="BLL\baseBLL\cat.js">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="BLL\bll.js">
+    <Compile Include="BLL\baseBLL\_bll.js">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="controllers\mainControllers\_mainControllers.js" />
     <Compile Include="controllers\mainControllers\home.js" />
     <Compile Include="controllers\mainControllers\user.js" />
+    <Compile Include="controllers\mainControllers\_routerPath.js" />
     <Compile Include="libs\crypto.js">
       <SubType>Code</SubType>
     </Compile>
@@ -57,7 +62,7 @@
     <Compile Include="libs\routerPath.js">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="models\models.js">
+    <Compile Include="models\baseModels\_models.js">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="models\baseModels\cat.js">
@@ -91,9 +96,6 @@
     <Content Include="views\mainViews\home\index.html" />
     <Content Include="views\mainViews\user\index.html" />
     <Content Include="views\mainViews\user\news.html" />
-    <Content Include="views\mainViews\test\index.html">
-      <SubType>Code</SubType>
-    </Content>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="BLL\baseBLL\" />
@@ -101,6 +103,7 @@
     <Folder Include="controllers\adminControllers\" />
     <Folder Include="controllers\mainControllers\" />
     <Folder Include="controllers\apiControllers\" />
+    <Folder Include="html\master\" />
     <Folder Include="libs\" />
     <Folder Include="models\" />
     <Folder Include="models\baseModels\" />
@@ -113,9 +116,10 @@
     <Folder Include="public\js\" />
     <Folder Include="views\" />
     <Folder Include="views\adminViews\home\" />
+    <Folder Include="views\adminViews\master\" />
     <Folder Include="views\mainViews\home\" />
     <Folder Include="views\mainViews\" />
-    <Folder Include="views\mainViews\test\" />
+    <Folder Include="views\mainViews\master\" />
     <Folder Include="views\mainViews\user\" />
     <Folder Include="views\adminViews\" />
   </ItemGroup>

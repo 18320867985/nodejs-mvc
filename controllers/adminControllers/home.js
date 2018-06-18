@@ -1,9 +1,8 @@
-﻿const path = require("path");
+﻿
 const app = require("./_adminRouter");
-const routerPath = require("../../libs/routerPath");
-//var BLL = require("../BLL/bll");
+const routerPath = require("./_routerPath");
+var BLL = require("../../BLL/baseBLL/_bll");
 
-routerPath.area = "admin";
 routerPath.controller = "home";
 module.exports = function () {
     
