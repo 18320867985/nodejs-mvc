@@ -8,16 +8,9 @@ module.exports = function () {
     
     // get
     var index = routerPath.setRouter("index");
-    app.get( index.routerUrl(), function (req, res) {
-       // var cat = new BLL.Cat();
-        //cat.create({ name: "hqs", age: 12 }, function (err, data) {
-        //    data.age = 28;
-        //    data.save();
-        //    console.log(data);
-        //});
-       // req.session.cookie.
- 
-          res.render(index.htmlUrl(), { lists: ["aaa", "bbbb"] });
+    app.get(index.routerUrl(), function (req, res) {
+     
+          res.render(index.htmlUrl(), { lists: ["aaa", "bbbb"]});
     });
 
 
@@ -39,15 +32,11 @@ module.exports = function () {
 
     app.post(index.routerUrl(), function (req, res) {
         var body = req.body;
-       
+      
         req.session.login = true;
-        res.redirect("/user/news");
+        res.redirect("/admin/home/index");
         res.end();
     });
-
-
-    
-
     
 };
 

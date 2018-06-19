@@ -5,6 +5,9 @@
     <Name>NodejsWebApp2</Name>
     <RootNamespace>NodejsWebApp2</RootNamespace>
     <LastActiveSolutionConfig>Debug|Any CPU</LastActiveSolutionConfig>
+    <EnableTypeScript>true</EnableTypeScript>
+    <TypeScriptSourceMap>true</TypeScriptSourceMap>
+    <TypeScriptModuleKind>CommonJS</TypeScriptModuleKind>
   </PropertyGroup>
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -12,7 +15,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>96c2b994-88fe-45ac-8efd-47df30bad002</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>server.js</StartupFile>
+    <StartupFile>app.js</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -29,7 +32,61 @@
     <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="public\js\all.js" />
+    <Compile Include="src\js-dev\1-common\common.js" />
+    <Compile Include="src\js-dev\1-common\Interface.js" />
+    <Compile Include="src\js-dev\2-namespace\namespace.js" />
+    <Compile Include="src\js-dev\3-api\pc\bsDate.js" />
+    <Compile Include="src\js-dev\3-api\pc\iframe.js" />
+    <Compile Include="src\js-dev\3-api\pc\jqzoom.js" />
+    <Compile Include="src\js-dev\3-api\pc\lazy.js" />
+    <Compile Include="src\js-dev\3-api\pc\scroll.js" />
+    <Compile Include="src\js-dev\3-api\pc\threeAddress.js" />
+    <Compile Include="src\js-dev\3-api\pc\threeDate.js" />
+    <Compile Include="src\js-dev\3-api\pc\treeSelectAddress.js" />
+    <Compile Include="src\js-dev\4-component\check-btn.js" />
+    <Compile Include="src\js-dev\4-component\draggale.js" />
+    <Compile Include="src\js-dev\4-component\message.js" />
+    <Compile Include="src\js-dev\4-component\num.js" />
+    <Compile Include="src\js-dev\4-component\radio-btn.js" />
+    <Compile Include="src\js-dev\4-component\tab-box.js" />
+    <Compile Include="src\js-dev\5-modules\df.js" />
+    <Compile Include="src\js-dev\5-modules\index.js" />
+    <Compile Include="src\js-dev\libs\bs-3\bootstrap.js" />
+    <Compile Include="src\js-dev\libs\bs-3\bootstrap.min.js" />
+    <Compile Include="src\js-dev\libs\h5File\html5FlieUpload.js" />
+    <Compile Include="src\js-dev\libs\interface\Interface.js" />
+    <Compile Include="src\js-dev\libs\jq\jquery-1.11.0.js" />
+    <Compile Include="src\js-dev\libs\jq\jquery-1.11.0.min.js" />
+    <Compile Include="src\js-dev\libs\jq\jquery-1.2.6.js" />
+    <Compile Include="src\js-dev\libs\jq\jquery-1.7.2.min.js" />
+    <Compile Include="src\js-dev\libs\jq\jquery-1.8.3.js" />
+    <Compile Include="src\js-dev\libs\jq\jquery-1.8.3.min.js" />
+    <Compile Include="src\js-dev\libs\jq\jquery-1.9.1.js" />
+    <Compile Include="src\js-dev\libs\jq\jquery-1.9.1.min.js" />
+    <Compile Include="src\js-dev\libs\jq\jquery-2.1.0.js" />
+    <Compile Include="src\js-dev\libs\jq\jquery-2.1.0.min.js" />
+    <Compile Include="src\js-dev\libs\jq\jquery-3.2.1.js" />
+    <Compile Include="src\js-dev\libs\jq\jquery-3.2.1.min.js" />
+    <Compile Include="src\js-dev\libs\jq\jquery-3.2.1.slim.min.js" />
+    <Compile Include="src\js-dev\libs\jq\jquery-drag.min.js" />
+    <Compile Include="src\js-dev\libs\jq\jquery-Effect.min.js" />
+    <Compile Include="src\js-dev\libs\jq\jquery-ui-autocomplete\external\jquery\jquery.js" />
+    <Compile Include="src\js-dev\libs\jq\jquery-ui-autocomplete\jquery-1.11.0.min.js" />
+    <Compile Include="src\js-dev\libs\jq\jquery-ui-autocomplete\jquery-ui.js" />
+    <Compile Include="src\js-dev\libs\jq\jquery-ui-autocomplete\jquery-ui.min.js" />
+    <Compile Include="src\js-dev\libs\jq\jquery.touchSwipe.min.js" />
+    <Compile Include="src\js-dev\libs\mustache\handlebars-v4.0.8.js" />
+    <Compile Include="src\js-dev\libs\mustache\handlebars-v4.0.8.min.js" />
+    <Compile Include="src\js-dev\libs\mustache\mustache.js" />
+    <Compile Include="src\js-dev\libs\mustache\mustache.min.js" />
+    <Compile Include="src\js-dev\libs\paging\paging.js" />
+    <Compile Include="src\js-dev\libs\vd\vd.js" />
+    <Compile Include="src\js-dev\temp\temp.js" />
     <Compile Include="controllers\adminControllers\home.js" />
+    <Compile Include="controllers\adminControllers\news.js">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="controllers\adminControllers\_allControllers.js" />
     <Compile Include="controllers\adminControllers\_allRouters.js" />
     <Compile Include="controllers\adminControllers\_routerPath.js">
@@ -41,6 +98,9 @@
     <Compile Include="controllers\apiControllers\_routerPath.js" />
     <Compile Include="controllers\webControllers\_allControllers.js" />
     <Compile Include="controllers\webControllers\_allRouters.js" />
+    <Compile Include="controllers\adminControllers\filter.js">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="controllers\webControllers\_routerPath.js" />
     <Compile Include="BLL\baseBLL\cat.js">
       <SubType>Code</SubType>
@@ -50,6 +110,7 @@
     </Compile>
     <Compile Include="controllers\webControllers\home.js" />
     <Compile Include="controllers\webControllers\user.js" />
+    <Compile Include="gulpfile.js" />
     <Compile Include="libs\crypto.js">
       <SubType>Code</SubType>
     </Compile>
@@ -66,17 +127,170 @@
     <Compile Include="models\baseModels\cat.js">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="public\css\bs-date\js\bootstrap-datetimepicker-ch.js" />
+    <Compile Include="public\css\cstfont\iconfont.js" />
+    <Compile Include="public\css\icheck\icheck.min.js" />
+    <Compile Include="public\js\bd-map.js" />
+    <Compile Include="public\js\city.data-3.js" />
+    <Compile Include="public\js\config.js" />
+    <Compile Include="public\js\handlebars-v4.0.8.min.js" />
     <Compile Include="public\js\html5FlieUpload.js" />
     <Compile Include="public\js\html5shiv.js" />
+    <Compile Include="public\js\ie8.js" />
     <Compile Include="public\js\include.min.js" />
     <Compile Include="public\js\jquery-1.11.0.min.js" />
+    <Compile Include="public\js\modernizr-2.6.2.min.js" />
+    <Compile Include="public\js\prefix-css3.min.js" />
     <Compile Include="public\js\respond.min.js" />
-    <Compile Include="server.js" />
+    <Compile Include="app.js" />
     <Compile Include="test.js" />
-    <Compile Include="test\test.js" />
     <Compile Include="test\mapReduce.js">
       <SubType>Code</SubType>
     </Compile>
+    <Content Include="public\css\all.css" />
+    <Content Include="src\css-dev\scss\all.scss" />
+    <Content Include="src\css-dev\scss\bs-scss-3\bootstrap\mixins\_alerts.scss" />
+    <Content Include="src\css-dev\scss\bs-scss-3\bootstrap\mixins\_background-variant.scss" />
+    <Content Include="src\css-dev\scss\bs-scss-3\bootstrap\mixins\_border-radius.scss" />
+    <Content Include="src\css-dev\scss\bs-scss-3\bootstrap\mixins\_buttons.scss" />
+    <Content Include="src\css-dev\scss\bs-scss-3\bootstrap\mixins\_center-block.scss" />
+    <Content Include="src\css-dev\scss\bs-scss-3\bootstrap\mixins\_clearfix.scss" />
+    <Content Include="src\css-dev\scss\bs-scss-3\bootstrap\mixins\_forms.scss" />
+    <Content Include="src\css-dev\scss\bs-scss-3\bootstrap\mixins\_gradients.scss" />
+    <Content Include="src\css-dev\scss\bs-scss-3\bootstrap\mixins\_grid-framework.scss" />
+    <Content Include="src\css-dev\scss\bs-scss-3\bootstrap\mixins\_grid.scss" />
+    <Content Include="src\css-dev\scss\bs-scss-3\bootstrap\mixins\_hide-text.scss" />
+    <Content Include="src\css-dev\scss\bs-scss-3\bootstrap\mixins\_image.scss" />
+    <Content Include="src\css-dev\scss\bs-scss-3\bootstrap\mixins\_labels.scss" />
+    <Content Include="src\css-dev\scss\bs-scss-3\bootstrap\mixins\_list-group.scss" />
+    <Content Include="src\css-dev\scss\bs-scss-3\bootstrap\mixins\_nav-divider.scss" />
+    <Content Include="src\css-dev\scss\bs-scss-3\bootstrap\mixins\_nav-vertical-align.scss" />
+    <Content Include="src\css-dev\scss\bs-scss-3\bootstrap\mixins\_opacity.scss" />
+    <Content Include="src\css-dev\scss\bs-scss-3\bootstrap\mixins\_pagination.scss" />
+    <Content Include="src\css-dev\scss\bs-scss-3\bootstrap\mixins\_panels.scss" />
+    <Content Include="src\css-dev\scss\bs-scss-3\bootstrap\mixins\_progress-bar.scss" />
+    <Content Include="src\css-dev\scss\bs-scss-3\bootstrap\mixins\_reset-filter.scss" />
+    <Content Include="src\css-dev\scss\bs-scss-3\bootstrap\mixins\_reset-text.scss" />
+    <Content Include="src\css-dev\scss\bs-scss-3\bootstrap\mixins\_resize.scss" />
+    <Content Include="src\css-dev\scss\bs-scss-3\bootstrap\mixins\_responsive-visibility.scss" />
+    <Content Include="src\css-dev\scss\bs-scss-3\bootstrap\mixins\_size.scss" />
+    <Content Include="src\css-dev\scss\bs-scss-3\bootstrap\mixins\_tab-focus.scss" />
+    <Content Include="src\css-dev\scss\bs-scss-3\bootstrap\mixins\_table-row.scss" />
+    <Content Include="src\css-dev\scss\bs-scss-3\bootstrap\mixins\_text-emphasis.scss" />
+    <Content Include="src\css-dev\scss\bs-scss-3\bootstrap\mixins\_text-overflow.scss" />
+    <Content Include="src\css-dev\scss\bs-scss-3\bootstrap\mixins\_vendor-prefixes.scss" />
+    <Content Include="src\css-dev\scss\bs-scss-3\bootstrap\_alerts.scss" />
+    <Content Include="src\css-dev\scss\bs-scss-3\bootstrap\_badges.scss" />
+    <Content Include="src\css-dev\scss\bs-scss-3\bootstrap\_breadcrumbs.scss" />
+    <Content Include="src\css-dev\scss\bs-scss-3\bootstrap\_button-groups.scss" />
+    <Content Include="src\css-dev\scss\bs-scss-3\bootstrap\_buttons.scss" />
+    <Content Include="src\css-dev\scss\bs-scss-3\bootstrap\_carousel.scss" />
+    <Content Include="src\css-dev\scss\bs-scss-3\bootstrap\_close.scss" />
+    <Content Include="src\css-dev\scss\bs-scss-3\bootstrap\_code.scss" />
+    <Content Include="src\css-dev\scss\bs-scss-3\bootstrap\_component-animations.scss" />
+    <Content Include="src\css-dev\scss\bs-scss-3\bootstrap\_dropdowns.scss" />
+    <Content Include="src\css-dev\scss\bs-scss-3\bootstrap\_forms.scss" />
+    <Content Include="src\css-dev\scss\bs-scss-3\bootstrap\_glyphicons.scss" />
+    <Content Include="src\css-dev\scss\bs-scss-3\bootstrap\_grid.scss" />
+    <Content Include="src\css-dev\scss\bs-scss-3\bootstrap\_input-groups.scss" />
+    <Content Include="src\css-dev\scss\bs-scss-3\bootstrap\_jumbotron.scss" />
+    <Content Include="src\css-dev\scss\bs-scss-3\bootstrap\_labels.scss" />
+    <Content Include="src\css-dev\scss\bs-scss-3\bootstrap\_list-group.scss" />
+    <Content Include="src\css-dev\scss\bs-scss-3\bootstrap\_media.scss" />
+    <Content Include="src\css-dev\scss\bs-scss-3\bootstrap\_mixins.scss" />
+    <Content Include="src\css-dev\scss\bs-scss-3\bootstrap\_modals.scss" />
+    <Content Include="src\css-dev\scss\bs-scss-3\bootstrap\_navbar.scss" />
+    <Content Include="src\css-dev\scss\bs-scss-3\bootstrap\_navs.scss" />
+    <Content Include="src\css-dev\scss\bs-scss-3\bootstrap\_normalize.scss" />
+    <Content Include="src\css-dev\scss\bs-scss-3\bootstrap\_pager.scss" />
+    <Content Include="src\css-dev\scss\bs-scss-3\bootstrap\_pagination.scss" />
+    <Content Include="src\css-dev\scss\bs-scss-3\bootstrap\_panels.scss" />
+    <Content Include="src\css-dev\scss\bs-scss-3\bootstrap\_popovers.scss" />
+    <Content Include="src\css-dev\scss\bs-scss-3\bootstrap\_print.scss" />
+    <Content Include="src\css-dev\scss\bs-scss-3\bootstrap\_progress-bars.scss" />
+    <Content Include="src\css-dev\scss\bs-scss-3\bootstrap\_responsive-embed.scss" />
+    <Content Include="src\css-dev\scss\bs-scss-3\bootstrap\_responsive-utilities.scss" />
+    <Content Include="src\css-dev\scss\bs-scss-3\bootstrap\_scaffolding.scss" />
+    <Content Include="src\css-dev\scss\bs-scss-3\bootstrap\_tables.scss" />
+    <Content Include="src\css-dev\scss\bs-scss-3\bootstrap\_theme.scss" />
+    <Content Include="src\css-dev\scss\bs-scss-3\bootstrap\_thumbnails.scss" />
+    <Content Include="src\css-dev\scss\bs-scss-3\bootstrap\_tooltip.scss" />
+    <Content Include="src\css-dev\scss\bs-scss-3\bootstrap\_type.scss" />
+    <Content Include="src\css-dev\scss\bs-scss-3\bootstrap\_utilities.scss" />
+    <Content Include="src\css-dev\scss\bs-scss-3\bootstrap\_variables.scss" />
+    <Content Include="src\css-dev\scss\bs-scss-3\bootstrap\_wells.scss" />
+    <Content Include="src\css-dev\scss\bs-scss-3\_bootstrap-compass.scss" />
+    <Content Include="src\css-dev\scss\bs-scss-3\_bootstrap-mincer.scss" />
+    <Content Include="src\css-dev\scss\bs-scss-3\_bootstrap-sprockets.scss" />
+    <Content Include="src\css-dev\scss\bs-scss-3\_bootstrap.scss" />
+    <Content Include="src\css-dev\scss\component-scss\_comp-all.scss" />
+    <Content Include="src\css-dev\scss\component-scss\_jqzoom.scss" />
+    <Content Include="src\css-dev\scss\component-scss\_message.scss" />
+    <Content Include="src\css-dev\scss\component-scss\_tab.scss" />
+    <Content Include="src\css-dev\scss\component-scss\_treeSelectAddress.scss" />
+    <Content Include="src\css-dev\scss\fa-scss\font-awesome-ie7.scss" />
+    <Content Include="src\css-dev\scss\fa-scss\font-awesome.scss" />
+    <Content Include="src\css-dev\scss\fa-scss\_bootstrap.scss" />
+    <Content Include="src\css-dev\scss\fa-scss\_core.scss" />
+    <Content Include="src\css-dev\scss\fa-scss\_extras.scss" />
+    <Content Include="src\css-dev\scss\fa-scss\_icons.scss" />
+    <Content Include="src\css-dev\scss\fa-scss\_mixins.scss" />
+    <Content Include="src\css-dev\scss\fa-scss\_path.scss" />
+    <Content Include="src\css-dev\scss\fa-scss\_variables.scss" />
+    <Content Include="src\css-dev\scss\page-scss\_all-page.scss" />
+    <Content Include="src\css-dev\scss\page-scss\_common.scss" />
+    <Content Include="src\css-dev\scss\page-scss\_footer.scss" />
+    <Content Include="src\css-dev\scss\page-scss\_head.scss" />
+    <Content Include="src\css-dev\scss\page-scss\_index.scss" />
+    <Content Include="src\css-dev\scss\_df-pc.scss" />
+    <Content Include="src\css-dev\scss\_h5File.scss" />
+    <Content Include="src\css-dev\scss\_media.scss" />
+    <Content Include="src\css-dev\scss\_message.scss" />
+    <Content Include="src\css-dev\scss\_mixin.scss" />
+    <Content Include="src\css-dev\scss\_normalize.scss" />
+    <Content Include="src\css-dev\scss\_test.scss" />
+    <Content Include="src\css-dev\scss\_var.scss" />
+    <Content Include="src\css-dev\scss\_vd.scss" />
+    <Content Include="src\css-dev\响应文件.txt" />
+    <Content Include="src\css-dev\颜色函数.txt" />
+    <Content Include="src\js-dev\libs\jq\jquery-ui-autocomplete\.project" />
+    <Content Include="src\js-dev\libs\jq\jquery-ui-autocomplete\AUTHORS.txt" />
+    <Content Include="src\js-dev\libs\jq\jquery-ui-autocomplete\autocomplate.html" />
+    <Content Include="src\js-dev\libs\jq\jquery-ui-autocomplete\images\ui-bg_diagonals-thick_75_f3d8d8_40x40.png" />
+    <Content Include="src\js-dev\libs\jq\jquery-ui-autocomplete\images\ui-bg_dots-small_65_a6a6a6_2x2.png" />
+    <Content Include="src\js-dev\libs\jq\jquery-ui-autocomplete\images\ui-bg_glass_55_fbf8ee_1x400.png" />
+    <Content Include="src\js-dev\libs\jq\jquery-ui-autocomplete\images\ui-bg_highlight-hard_100_eeeeee_1x100.png" />
+    <Content Include="src\js-dev\libs\jq\jquery-ui-autocomplete\images\ui-bg_highlight-hard_100_f6f6f6_1x100.png" />
+    <Content Include="src\js-dev\libs\jq\jquery-ui-autocomplete\images\ui-bg_highlight-soft_15_cc0000_1x100.png" />
+    <Content Include="src\js-dev\libs\jq\jquery-ui-autocomplete\images\ui-icons_004276_256x240.png" />
+    <Content Include="src\js-dev\libs\jq\jquery-ui-autocomplete\images\ui-icons_cc0000_256x240.png" />
+    <Content Include="src\js-dev\libs\jq\jquery-ui-autocomplete\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="src\js-dev\libs\jq\jquery-ui-autocomplete\index.html" />
+    <Content Include="src\js-dev\libs\jq\jquery-ui-autocomplete\jquery-ui.css" />
+    <Content Include="src\js-dev\libs\jq\jquery-ui-autocomplete\jquery-ui.min.css" />
+    <Content Include="src\js-dev\libs\jq\jquery-ui-autocomplete\jquery-ui.structure.css" />
+    <Content Include="src\js-dev\libs\jq\jquery-ui-autocomplete\jquery-ui.structure.min.css" />
+    <Content Include="src\js-dev\libs\jq\jquery-ui-autocomplete\jquery-ui.theme.css" />
+    <Content Include="src\js-dev\libs\jq\jquery-ui-autocomplete\jquery-ui.theme.min.css" />
+    <Content Include="src\js-dev\libs\jq\jquery-ui-autocomplete\LICENSE.txt" />
+    <Content Include="src\js-dev\libs\jq\jquery-ui-autocomplete\package.json" />
+    <Content Include="src\js-dev\libs\jq\jquery-ui-autocomplete\test.json" />
+    <Content Include="src\js-dev\libs\jq\jq插件编写.txt" />
+    <Content Include="src\js-dev\libs\jq\touchSwipe.txt" />
+    <Content Include="src\js-dev\libs\mustache\handlebars帮助.txt" />
+    <Content Include="src\js-dev\libs\mustache\帮助.txt" />
+    <Content Include="src\js-dev\libs\paging\paging.css" />
+    <Content Include="src\js-dev\libs\paging\paging.scss" />
+    <Content Include="src\js-dev\libs\paging\分页.txt" />
+    <Content Include="src\js-dev\libs\vd\.gitignore" />
+    <Content Include="src\js-dev\libs\vd\.project" />
+    <Content Include="src\js-dev\libs\vd\test.txt" />
+    <Content Include="src\js-dev\libs\vd\vd.css" />
+    <Content Include="src\js-dev\libs\vd\帮助文档.txt" />
+    <Content Include="src\test-dev\admin.html" />
+    <Content Include="src\test-dev\pc-temp.html" />
+    <Content Include="src\test-dev\test.html" />
+    <Content Include="src\test-dev\wx-temp.html" />
     <Content Include="config.js">
       <SubType>Code</SubType>
     </Content>
@@ -84,33 +298,209 @@
       <SubType>Code</SubType>
     </Content>
     <Content Include="package.json" />
-    <Content Include="public\css\flieUpload.css" />
-    <Content Include="public\css\main.css" />
+    <Content Include="public\css\bs-date\css\bootstrap-datetimepicker.css" />
+    <Content Include="public\css\bs-date\css\bootstrap-datetimepicker.min.css" />
+    <Content Include="public\css\bs-date\文本文档.txt" />
+    <Content Include="public\css\cstfont\iconfont.css" />
+    <Content Include="public\css\cstfont\iconfont.eot" />
+    <Content Include="public\css\cstfont\iconfont.svg" />
+    <Content Include="public\css\cstfont\iconfont.ttf" />
+    <Content Include="public\css\cstfont\iconfont.woff" />
+    <Content Include="public\css\fonts\fontawesome-webfont.eot" />
+    <Content Include="public\css\fonts\fontawesome-webfont.svg" />
+    <Content Include="public\css\fonts\fontawesome-webfont.ttf" />
+    <Content Include="public\css\fonts\fontawesome-webfont.woff" />
+    <Content Include="public\css\fonts\FontAwesome.otf" />
+    <Content Include="public\css\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="public\css\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="public\css\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="public\css\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="public\css\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="public\css\icheck\icheck帮助文档.txt" />
+    <Content Include="public\css\icheck\skins\all.css" />
+    <Content Include="public\css\icheck\skins\flat\aero%402x.png" />
+    <Content Include="public\css\icheck\skins\flat\aero.css" />
+    <Content Include="public\css\icheck\skins\flat\aero.png" />
+    <Content Include="public\css\icheck\skins\flat\blue%402x.png" />
+    <Content Include="public\css\icheck\skins\flat\blue.css" />
+    <Content Include="public\css\icheck\skins\flat\blue.png" />
+    <Content Include="public\css\icheck\skins\flat\flat%402x.png" />
+    <Content Include="public\css\icheck\skins\flat\flat.css" />
+    <Content Include="public\css\icheck\skins\flat\flat.png" />
+    <Content Include="public\css\icheck\skins\flat\green%402x.png" />
+    <Content Include="public\css\icheck\skins\flat\green.css" />
+    <Content Include="public\css\icheck\skins\flat\green.png" />
+    <Content Include="public\css\icheck\skins\flat\grey%402x.png" />
+    <Content Include="public\css\icheck\skins\flat\grey.css" />
+    <Content Include="public\css\icheck\skins\flat\grey.png" />
+    <Content Include="public\css\icheck\skins\flat\orange%402x.png" />
+    <Content Include="public\css\icheck\skins\flat\orange.css" />
+    <Content Include="public\css\icheck\skins\flat\orange.png" />
+    <Content Include="public\css\icheck\skins\flat\pink%402x.png" />
+    <Content Include="public\css\icheck\skins\flat\pink.css" />
+    <Content Include="public\css\icheck\skins\flat\pink.png" />
+    <Content Include="public\css\icheck\skins\flat\purple%402x.png" />
+    <Content Include="public\css\icheck\skins\flat\purple.css" />
+    <Content Include="public\css\icheck\skins\flat\purple.png" />
+    <Content Include="public\css\icheck\skins\flat\red%402x.png" />
+    <Content Include="public\css\icheck\skins\flat\red.css" />
+    <Content Include="public\css\icheck\skins\flat\red.png" />
+    <Content Include="public\css\icheck\skins\flat\yellow%402x.png" />
+    <Content Include="public\css\icheck\skins\flat\yellow.css" />
+    <Content Include="public\css\icheck\skins\flat\yellow.png" />
+    <Content Include="public\css\icheck\skins\flat\_all.css" />
+    <Content Include="public\css\icheck\skins\futurico\futurico%402x.png" />
+    <Content Include="public\css\icheck\skins\futurico\futurico.css" />
+    <Content Include="public\css\icheck\skins\futurico\futurico.png" />
+    <Content Include="public\css\icheck\skins\line\aero.css" />
+    <Content Include="public\css\icheck\skins\line\blue.css" />
+    <Content Include="public\css\icheck\skins\line\green.css" />
+    <Content Include="public\css\icheck\skins\line\grey.css" />
+    <Content Include="public\css\icheck\skins\line\line%402x.png" />
+    <Content Include="public\css\icheck\skins\line\line.css" />
+    <Content Include="public\css\icheck\skins\line\line.png" />
+    <Content Include="public\css\icheck\skins\line\orange.css" />
+    <Content Include="public\css\icheck\skins\line\pink.css" />
+    <Content Include="public\css\icheck\skins\line\purple.css" />
+    <Content Include="public\css\icheck\skins\line\red.css" />
+    <Content Include="public\css\icheck\skins\line\yellow.css" />
+    <Content Include="public\css\icheck\skins\line\_all.css" />
+    <Content Include="public\css\icheck\skins\minimal\aero%402x.png" />
+    <Content Include="public\css\icheck\skins\minimal\aero.css" />
+    <Content Include="public\css\icheck\skins\minimal\aero.png" />
+    <Content Include="public\css\icheck\skins\minimal\blue%402x.png" />
+    <Content Include="public\css\icheck\skins\minimal\blue.css" />
+    <Content Include="public\css\icheck\skins\minimal\blue.png" />
+    <Content Include="public\css\icheck\skins\minimal\green%402x.png" />
+    <Content Include="public\css\icheck\skins\minimal\green.css" />
+    <Content Include="public\css\icheck\skins\minimal\green.png" />
+    <Content Include="public\css\icheck\skins\minimal\grey%402x.png" />
+    <Content Include="public\css\icheck\skins\minimal\grey.css" />
+    <Content Include="public\css\icheck\skins\minimal\grey.png" />
+    <Content Include="public\css\icheck\skins\minimal\minimal%402x.png" />
+    <Content Include="public\css\icheck\skins\minimal\minimal.css" />
+    <Content Include="public\css\icheck\skins\minimal\minimal.png" />
+    <Content Include="public\css\icheck\skins\minimal\orange%402x.png" />
+    <Content Include="public\css\icheck\skins\minimal\orange.css" />
+    <Content Include="public\css\icheck\skins\minimal\orange.png" />
+    <Content Include="public\css\icheck\skins\minimal\pink%402x.png" />
+    <Content Include="public\css\icheck\skins\minimal\pink.css" />
+    <Content Include="public\css\icheck\skins\minimal\pink.png" />
+    <Content Include="public\css\icheck\skins\minimal\purple%402x.png" />
+    <Content Include="public\css\icheck\skins\minimal\purple.css" />
+    <Content Include="public\css\icheck\skins\minimal\purple.png" />
+    <Content Include="public\css\icheck\skins\minimal\red%402x.png" />
+    <Content Include="public\css\icheck\skins\minimal\red.css" />
+    <Content Include="public\css\icheck\skins\minimal\red.png" />
+    <Content Include="public\css\icheck\skins\minimal\yellow%402x.png" />
+    <Content Include="public\css\icheck\skins\minimal\yellow.css" />
+    <Content Include="public\css\icheck\skins\minimal\yellow.png" />
+    <Content Include="public\css\icheck\skins\minimal\_all.css" />
+    <Content Include="public\css\icheck\skins\polaris\polaris%402x.png" />
+    <Content Include="public\css\icheck\skins\polaris\polaris.css" />
+    <Content Include="public\css\icheck\skins\polaris\polaris.png" />
+    <Content Include="public\css\icheck\skins\square\aero%402x.png" />
+    <Content Include="public\css\icheck\skins\square\aero.css" />
+    <Content Include="public\css\icheck\skins\square\aero.png" />
+    <Content Include="public\css\icheck\skins\square\blue%402x.png" />
+    <Content Include="public\css\icheck\skins\square\blue.css" />
+    <Content Include="public\css\icheck\skins\square\blue.png" />
+    <Content Include="public\css\icheck\skins\square\green%402x.png" />
+    <Content Include="public\css\icheck\skins\square\green.css" />
+    <Content Include="public\css\icheck\skins\square\green.png" />
+    <Content Include="public\css\icheck\skins\square\grey%402x.png" />
+    <Content Include="public\css\icheck\skins\square\grey.css" />
+    <Content Include="public\css\icheck\skins\square\grey.png" />
+    <Content Include="public\css\icheck\skins\square\orange%402x.png" />
+    <Content Include="public\css\icheck\skins\square\orange.css" />
+    <Content Include="public\css\icheck\skins\square\orange.png" />
+    <Content Include="public\css\icheck\skins\square\pink%402x.png" />
+    <Content Include="public\css\icheck\skins\square\pink.css" />
+    <Content Include="public\css\icheck\skins\square\pink.png" />
+    <Content Include="public\css\icheck\skins\square\purple%402x.png" />
+    <Content Include="public\css\icheck\skins\square\purple.css" />
+    <Content Include="public\css\icheck\skins\square\purple.png" />
+    <Content Include="public\css\icheck\skins\square\red%402x.png" />
+    <Content Include="public\css\icheck\skins\square\red.css" />
+    <Content Include="public\css\icheck\skins\square\red.png" />
+    <Content Include="public\css\icheck\skins\square\square%402x.png" />
+    <Content Include="public\css\icheck\skins\square\square.css" />
+    <Content Include="public\css\icheck\skins\square\square.png" />
+    <Content Include="public\css\icheck\skins\square\yellow%402x.png" />
+    <Content Include="public\css\icheck\skins\square\yellow.css" />
+    <Content Include="public\css\icheck\skins\square\yellow.png" />
+    <Content Include="public\css\icheck\skins\square\_all.css" />
     <Content Include="README.md" />
     <Content Include="test\upload.html" />
     <Content Include="views\adminViews\home\index.html" />
+    <Content Include="views\adminViews\home\news.html" />
     <Content Include="views\webViews\home\ul.html" />
     <Content Include="views\webViews\home\news.html" />
     <Content Include="views\webViews\home\index.html" />
+    <Content Include="views\webViews\news\index.html">
+      <SubType>Code</SubType>
+    </Content>
     <Content Include="views\webViews\user\index.html" />
     <Content Include="views\webViews\user\news.html" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="BLL\baseBLL\" />
+    <Folder Include="src\css-dev\" />
+    <Folder Include="src\css-dev\scss\" />
+    <Folder Include="src\css-dev\scss\bs-scss-3\" />
+    <Folder Include="src\css-dev\scss\bs-scss-3\bootstrap\" />
+    <Folder Include="src\css-dev\scss\bs-scss-3\bootstrap\mixins\" />
+    <Folder Include="src\css-dev\scss\component-scss\" />
+    <Folder Include="src\css-dev\scss\fa-scss\" />
+    <Folder Include="src\css-dev\scss\page-scss\" />
+    <Folder Include="src\js-dev\" />
+    <Folder Include="src\js-dev\1-common\" />
+    <Folder Include="src\js-dev\2-namespace\" />
+    <Folder Include="src\js-dev\3-api\" />
+    <Folder Include="src\js-dev\3-api\pc\" />
+    <Folder Include="src\js-dev\4-component\" />
+    <Folder Include="src\js-dev\5-modules\" />
+    <Folder Include="src\js-dev\libs\" />
+    <Folder Include="src\js-dev\libs\bs-3\" />
+    <Folder Include="src\js-dev\libs\h5File\" />
+    <Folder Include="src\js-dev\libs\interface\" />
+    <Folder Include="src\js-dev\libs\jq\" />
+    <Folder Include="src\js-dev\libs\jq\jquery-ui-autocomplete\" />
+    <Folder Include="src\js-dev\libs\jq\jquery-ui-autocomplete\external\" />
+    <Folder Include="src\js-dev\libs\jq\jquery-ui-autocomplete\external\jquery\" />
+    <Folder Include="src\js-dev\libs\jq\jquery-ui-autocomplete\images\" />
+    <Folder Include="src\js-dev\libs\mustache\" />
+    <Folder Include="src\js-dev\libs\paging\" />
+    <Folder Include="src\js-dev\libs\vd\" />
+    <Folder Include="src\js-dev\temp\" />
+    <Folder Include="src\test-dev\" />
     <Folder Include="controllers\" />
     <Folder Include="controllers\adminControllers\" />
     <Folder Include="controllers\webControllers\" />
     <Folder Include="controllers\apiControllers\" />
-    <Folder Include="html\master\" />
     <Folder Include="libs\" />
     <Folder Include="models\" />
     <Folder Include="models\baseModels\" />
     <Folder Include="BLL\" />
     <Folder Include="html\" />
+    <Folder Include="src\" />
+    <Folder Include="public\css\bs-date\" />
+    <Folder Include="public\css\bs-date\css\" />
+    <Folder Include="public\css\bs-date\js\" />
+    <Folder Include="public\css\cstfont\" />
+    <Folder Include="public\css\fonts\" />
+    <Folder Include="public\css\icheck\" />
+    <Folder Include="public\css\icheck\skins\" />
+    <Folder Include="public\css\icheck\skins\flat\" />
+    <Folder Include="public\css\icheck\skins\futurico\" />
+    <Folder Include="public\css\icheck\skins\line\" />
+    <Folder Include="public\css\icheck\skins\minimal\" />
+    <Folder Include="public\css\icheck\skins\polaris\" />
+    <Folder Include="public\css\icheck\skins\square\" />
     <Folder Include="test\" />
     <Folder Include="public\" />
     <Folder Include="public\css\" />
-    <Folder Include="public\img\" />
+    <Folder Include="public\images\" />
     <Folder Include="public\js\" />
     <Folder Include="views\" />
     <Folder Include="views\adminViews\home\" />
@@ -118,6 +508,7 @@
     <Folder Include="views\webViews\home\" />
     <Folder Include="views\webViews\" />
     <Folder Include="views\webViews\master\" />
+    <Folder Include="views\webViews\news\" />
     <Folder Include="views\webViews\user\" />
     <Folder Include="views\adminViews\" />
   </ItemGroup>

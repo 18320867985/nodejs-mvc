@@ -1,3 +1,0 @@
-E:\dev\nodejs-mvc\obj\Debug\Nodejs-mvc.njsproj.CoreCompileInputs.cache
-E:\dev\nodejs-mvc\bin\Microsoft.NodejsTools.WebRole.dll
-E:\dev\nodejs-mvc\obj\Debug\Nodejs-mvc.njsprojAssemblyReference.cache
