@@ -4,22 +4,25 @@
 <head>
     <meta charset="utf-8" />
     <title></title>
-	 <link href="/public/css/main.css" rel="stylesheet" />	
+	 <link href="/public/css/all.css" rel="stylesheet" />	
 </head>
 <body>
     <h1>home-news</h1>
     <ul>
         <% lists.forEach(function(item){ %>
-           
-            <li><%-item%></li>
+
+        <li><%-item%></li>
         <%})%>
     </ul>
-	<hr/>
-	  <form action="index" method="post">
+    <hr />
+    <form action="index" method="post">
         <input type="text" name="name" value="" /> <br />
         <input type="password" name="pwd" value="" /> <br />
-        <input type="submit"  value="submit" /> <br />
+        <input type="submit" value="submit" /> <br />
     </form>
-	999999999999999999999
+
+    <script src="/public/js/jquery-1.11.0.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="/public/js/config.js" type="text/javascript" charset="utf-8"></script>
+    <script src="/public/js/all.js" type="text/javascript" charset="utf-8"></script>
 </body>
 </html>

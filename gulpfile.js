@@ -174,7 +174,6 @@ return	gulp.src('./src/images/**/*.*')
 });
 
 
-
 /*******************开发*************************/
 
 // 合并js文件
@@ -191,8 +190,6 @@ gulp.task("t_minjs", ["t_temp"], function() {
 });
 
 
-
-
 // 优先执行 合并自定js文件
 gulp.task("t_temp", function() {
 
@@ -203,9 +200,6 @@ gulp.task("t_temp", function() {
 		.pipe(gulp.dest('./src/js-dev/temp/'));
 
 });
-
-
-
 
 
 //sass合并css文件
@@ -244,8 +238,6 @@ gulp.task("watch", ['connect'], function() {
 	//sass合并压缩css文件
 	gulp.watch(paths.scssPath, ['t_minscss']);
 
-	//es6文件
-	//gulp.watch(paths.es6, ['t_es6']);
 
 	//监听html
 	gulp.watch(paths.htmlPath, function() {
@@ -255,8 +247,6 @@ gulp.task("watch", ['connect'], function() {
 	});
 
 });
-
-
 
 
 /*===================其他的=========================*/

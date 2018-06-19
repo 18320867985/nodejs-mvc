@@ -32,23 +32,12 @@ app.set('views', './views');
 app.engine('.html', require('ejs').__express);
 app.set('view engine', 'html');
 
-
 // static pages
 app.use("/public", express.static("./public"));
 app.use("/test", express.static("./test"));
 
 // static html
-//app.use("/", express.static("./html"));
-
-app.use(function (req, res, next) {
-
-    req.test = {
-        name: "hqs",
-        id:1
-    }
-    next();
-
-});
+app.use("/", express.static("./html"));
 
 // Ç°¶Ë
 app.use("/", require("./controllers/webControllers/_allRouters"));

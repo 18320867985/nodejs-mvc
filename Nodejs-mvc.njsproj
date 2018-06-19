@@ -32,6 +32,7 @@
     <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="gulpfile.js" />
     <Compile Include="public\js\all.js" />
     <Compile Include="src\js-dev\1-common\common.js" />
     <Compile Include="src\js-dev\1-common\Interface.js" />
@@ -110,7 +111,6 @@
     </Compile>
     <Compile Include="controllers\webControllers\home.js" />
     <Compile Include="controllers\webControllers\user.js" />
-    <Compile Include="gulpfile.js" />
     <Compile Include="libs\crypto.js">
       <SubType>Code</SubType>
     </Compile>
@@ -148,6 +148,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Content Include="public\css\all.css" />
+    <Content Include="public\images\html5.jpg" />
     <Content Include="src\css-dev\scss\all.scss" />
     <Content Include="src\css-dev\scss\bs-scss-3\bootstrap\mixins\_alerts.scss" />
     <Content Include="src\css-dev\scss\bs-scss-3\bootstrap\mixins\_background-variant.scss" />
