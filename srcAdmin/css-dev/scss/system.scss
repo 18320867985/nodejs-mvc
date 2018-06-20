@@ -1,0 +1,137 @@
+/**系统管理**/
+
+// 标题
+.system-ttl {
+    position: relative;
+    padding: 10px 10px 20px 10px;
+    font-size: 18px;
+    .iconttl {
+        position: relative;
+        margin-right: 5px;
+        top: 4px;
+        font-size: 20px;
+        color: $text-blue;
+    }
+}
+
+//表单查询
+.system-form {
+    padding: 10px 10px 10px 20px;
+    background: $bg-f8;
+    width: 100%;
+    .form-group {
+        margin-bottom: 0;
+        .form-control {
+            width: 180px;
+        }
+    }
+    .form-group+.form-group {
+        margin-left: 10px;
+    }
+    .btn-primary {
+        margin-left: 20px;
+    }
+}
+
+//操作按钮
+.system-btns {
+    //add-btns
+    margin: 15px 0;
+    padding-left: 10px;
+    .btn+.btn {
+        margin-left: 10px;
+    }
+}
+
+// 列表
+.system-list {
+    margin-top: 20px;
+    .table {
+        margin-bottom: 10px;
+        th,
+        td {
+            text-align: center;
+            padding: 12px 2px;
+        }
+        th {
+            background: $bg-f8;
+            border-bottom: none;
+        }
+        tr:nth-child(even) {
+            background: $bg-f8;
+        }
+        .op {
+            a+a {
+                margin-left: 5px;
+            }
+        }
+    }
+}
+
+// 三级日期
+.system-form .three-date{
+    .form-control{
+        width: 140px;
+        margin-right: 3px;
+        &+.form-control{
+            margin-left: 5px;
+        }
+    }
+}
+
+
+// system-paging 分页
+.system-paging {
+    padding: 15px 20px;
+    text-align: center;
+    background: $bg-f8;
+}
+
+
+/*分页2*/
+
+.system-paging2 {
+    padding: 10px;
+    .record {
+        display: inline-block;
+        select {
+            line-height: 16px;
+        }
+        .num-index {
+            margin-left: 15px;
+        }
+        .num-all {
+            margin-right: 15px;
+        }
+        .glyphicon.disabled {
+            color: #ccc;
+        }
+        .glyphicon.active {
+            color: $text-blue;
+            &:hover {
+                cursor: pointer;
+            }
+        }
+        .skip-txt {
+            width: 50px;
+            text-align: center;
+            border: 1px solid $br;
+        }
+        .skip-btn {
+            width: 50px;
+            color: $text-white;
+            border: none;
+            background: $text-blue;
+            outline: none;
+            &:hover {
+                background: darken($text-blue, 10%);
+            }
+        }
+        label {
+            color: $text-df;
+        }
+        &+.record {
+            margin-left: 20px;
+        }
+    }
+}

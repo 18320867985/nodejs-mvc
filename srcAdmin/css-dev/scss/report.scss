@@ -1,0 +1,71 @@
+
+/*报表*/
+
+.system-list.report{
+    padding: 10px 0;
+    border: 1px solid $br;
+    
+    
+    //h4
+    .ttl-1{
+        width: 100%;
+        padding: 20px 20px 30px 20px;
+        font-weight: 600;
+        text-align: center;
+        
+    }
+}
+
+
+// 出库统计
+.system-list.report-go{
+    .table{
+        table-layout:fixed;
+        th,
+        td{
+            width: 12.5%;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+        
+        td{
+            background: #fff ;
+        }
+        .cunku td{
+            background: #f8f8f8 ;
+        }
+    }
+    
+}
+
+
+// 客户对账单查询
+.system-list.report-ku{
+    .report-ku-ttl{
+        padding: 10px;
+        border: 1px solid $br;
+        border-left: none;
+        border-right:none;
+    }
+    
+    .report-ku-ttl-2{
+        padding: 25px;
+        text-align: center;
+    }
+    
+    .table{
+        border-bottom: 1px solid $br;;
+        tbody td{
+            padding: 10px 15px !important;
+            background: #fff;
+            
+            span+label{
+                margin-left: 15px;
+            }
+        }
+        
+    }
+}
+
+

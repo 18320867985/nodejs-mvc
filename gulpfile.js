@@ -45,6 +45,8 @@ var eslint = require("gulp-eslint"); // 检查es5 ees6 js gulp-eshint
 var babel = require("gulp-babel");
 
 
+/*===========================前端===================================*/
+
 // 文件路径
 var paths = {
 
@@ -249,8 +251,6 @@ gulp.task("watch", ['connect'], function() {
 });
 
 
-/*===================其他的=========================*/
-
 // 检查js
 gulp.task('t_eslint', function() {
 
@@ -260,3 +260,202 @@ gulp.task('t_eslint', function() {
 
 
 
+/*==========================后端================================*/
+
+// 文件路径
+var paths2 = {
+
+    // 原有的js库
+    jsCommon: [
+
+        "srcAdmin/js-dev/libs/prefix-css3.min.js", // pc端 自动补全css3前缀 
+
+        "srcAdmin/js-dev/libs/modernizr/modernizr-2.6.2.min.js",  // modernizr  检测css3和h5
+
+        //"srcAdmin/js-dev/libs/jq/jquery-1.11.0.js",  // jquery.js
+
+        //"srcAdmin/js-dev/libs/jq/jquery-drag.min.js",	// 拖动元素
+
+        //"srcAdmin/js-dev/libs/jq/jquery.touchSwipe.min.js",	//jquery.touchSwipe.min.js
+
+        //"srcAdmin/js-dev/libs/jq/jquery-Effect.min.js",  		//jquery-Effect.min.js
+
+        //"srcAdmin/js-dev/libs/jq/jquery.superslide.2.1.1.js",  //jquery.superslide.2.1.1.js
+
+        "srcAdmin/js-dev/libs/vd/vd.js",  //数据验证
+
+        "srcAdmin/js-dev/libs/paging/paging.js",  //分页
+
+        "srcAdmin/js-dev/libs/bs-3/bootstrap.js",  // bootstrap.js 3.0
+
+        //"srcAdmin/js-dev/libs/bs-4/bootstrap.js",  // bootstrap.js 4.0
+
+        //"srcAdmin/js-dev/libs/vue/vue.min.js",  // vue.min.js
+
+        //"srcAdmin/js-dev/libs/mui/mui.js", // mui插件
+
+        //"srcAdmin/js-dev/libs/zepto/zepto.js", //z epto.js
+
+        "srcAdmin/js-dev/temp/*.js", // 合并自定义的js
+
+    ],
+
+	/* 自定的js => 在原有的js库前执行  之后再合并所以js 
+	 * 目的是为es6转e5  兼容原有的js库  取消严格模式
+	 */
+    jsPath: [
+
+        "src/js-dev/common/*.js", 		// 1.公共模块
+
+        "src/js-dev/api/*.js", 			// 2.自定api
+
+        "src/js-dev/component/*.js", 	// 3.公共组件
+
+        "src/js-dev/modules/*.js" 		// 4.自定义模块
+
+    ],
+
+    // sass文件
+    scssPath: ['./srcAdmin/css-dev/scss/**/*.scss'],
+
+    allscss: ['./srcAdmin/css-dev/scss/all.scss'],
+
+    htmlPath: ['./htmlAdmin/**/*.html'],
+
+
+}
+
+
+// 清空目录gulp-del
+gulp.task('del2', function (cd) {
+    // gulp.src('./dist',{read:false}).pipe(clean()); //gulp-clean
+
+    del(["./dist"], cd); //gulp-del
+});
+
+
+
+/******发布文件*******/
+
+gulp.task('release2', ['concat2'], function () {
+
+    //**是所以文件夹
+    //*.*是所以文件
+    //gulp.src是查找文件
+    //pipe是进入流管道
+    //gulp.dest() 是复制文件
+
+    gulp.src(['./htmlAdmin/*.html']).pipe(gulp.dest('./dist2/htmlAdmin')); //复制html
+    gulp.src('./public/Aadmin-css/**/*.*').pipe(gulp.dest('./dist2/public/admin-css'));  //复制css
+    gulp.src('./public/admin-js/**/*.*').pipe(gulp.dest('./dist2/public/admin-js/'));  //复制js
+    gulp.src('./public/admin-images/**/*.*')
+        .pipe(img())                     // 压缩图片
+        .pipe(gulp.dest('./dist2/public/admin-images/')); //复制img
+
+   // gulp.src('./src/json/**/*.*').pipe(gulp.dest('./dist2/json/')); //复制 json
+
+});
+
+// 发布的合并js和css文件
+gulp.task("concat2", ["t_temp2", "css2", "js2"]);
+
+// 发布css
+gulp.task("css2", function () {
+
+    // scss 合并css
+    return gulp.src(paths2.allscss)
+        .pipe(sass().on('error', sass.logError)) // sass编译
+        .pipe(postcss([autoprefixer]))  // 自动添加css3缀-webkit-  适合用于手机端 
+        .pipe(minCss("all.css")) // 压缩css文件
+        .pipe(gulp.dest('./public/admin-css'));
+
+});
+
+// 发布js
+gulp.task("js2", function () {
+    // 合并js
+    return gulp.src(paths2.jsCommon)
+        .pipe(concat('all.js'))
+        .pipe(minJs("all.js")) // 压缩js文件
+        .pipe(gulp.dest('./public/admin-js/'));
+
+});
+
+
+
+/*******************开发*************************/
+
+// 合并js文件
+gulp.task("t_minjs2", ["t_temp2"], function () {
+
+    // 合并js
+    gulp.src(paths2.jsCommon)
+        .pipe(concat('admin-all.js'))
+        .pipe(minJs("admin-all.js")) //压缩js文件
+        .pipe(gulp.dest('./public/admin-js/'));
+
+    gulp.src(paths2.jsPath).pipe(connect.reload());
+
+});
+
+
+
+
+// 优先执行 合并自定js文件
+gulp.task("t_temp2", function () {
+
+    // 合并js
+    return gulp.src(paths2.jsPath)
+        .pipe(babel()) // es6编译
+        .pipe(concat('temp.js'))
+        .pipe(gulp.dest('./srcAdmin/js-dev/temp/'));
+
+});
+
+
+
+//sass合并css文件
+gulp.task("t_minscss2", function () {
+
+    gulp.src(paths2.allscss)
+        .pipe(sass().on('error', sass.logError)) // sass编译
+        .pipe(postcss([autoprefixer]))  // 自动添加css3缀-webkit-  适合用于手机端 
+        //.pipe(minCss("all.css")) // 压缩css文件
+        .pipe(gulp.dest('./src/css'));
+
+    gulp.src(paths2.scssPath).pipe(connect.reload());
+
+});
+
+//开启http服务器
+gulp.task('connect2', function () {
+    connect.server({
+        root: 'src',
+        livereload: true,
+        port: 9999
+    });
+});
+
+/*
+ * watch监听
+ * gulp.watch参数说明
+ * 1. gulp.watch(path,task);
+ * 2.gulp.watch(path,function(){});
+ */
+gulp.task("watch2", ['connect2'], function () {
+
+    //合拼压缩js文件
+    gulp.watch(paths2.jsPath, ["t_minjs2"]);
+
+    //sass合并压缩css文件
+    gulp.watch(paths2.scssPath, ['t_minscss2']);
+
+  
+    //监听html
+    gulp.watch(paths2.htmlPath, function () {
+        //重启服务器	
+        gulp.src(paths2.htmlPath).pipe(connect.reload());
+
+    });
+
+});

@@ -34,10 +34,14 @@ app.set('view engine', 'html');
 
 // static pages
 app.use("/public", express.static("./public"));
+app.use("/json", express.static("./json"));
 app.use("/test", express.static("./test"));
 
-// static html
+// Ç°¶Ë¾²Ì¬ html
 app.use("/", express.static("./html"));
+
+// ºó¶Ë¾²Ì¬  html
+app.use("/admin", express.static("./htmlAdmin"));
 
 // Ç°¶Ë
 app.use("/", require("./controllers/webControllers/_allRouters"));
