@@ -45,7 +45,11 @@ var eslint = require("gulp-eslint"); // 检查es5 ees6 js gulp-eshint
 var babel = require("gulp-babel");
 
 
-/*===========================前端===================================*/
+/*
+ * ===========================前端===================================
+ * ==================================================================
+ * ================================================================== 
+ * */
 
 // 文件路径
 var paths = {
@@ -260,7 +264,18 @@ gulp.task('t_eslint', function() {
 
 
 
-/*==========================后端================================*/
+
+
+
+
+
+
+
+/*
+ * ==========================后端================================
+ * ==============================================================
+ * ==============================================================
+ * */
 
 // 文件路径
 var paths2 = {
@@ -305,13 +320,13 @@ var paths2 = {
 	 */
     jsPath: [
 
-        "src/js-dev/common/*.js", 		// 1.公共模块
+        "srcAdmin/js-dev/common/*.js", 		// 1.公共模块
 
-        "src/js-dev/api/*.js", 			// 2.自定api
+        "srcAdmin/js-dev/api/*.js", 			// 2.自定api
 
-        "src/js-dev/component/*.js", 	// 3.公共组件
+        "srcAdmin/js-dev/component/*.js", 	// 3.公共组件
 
-        "src/js-dev/modules/*.js" 		// 4.自定义模块
+        "srcAdmin/js-dev/modules/*.js" 		// 4.自定义模块
 
     ],
 
@@ -346,7 +361,7 @@ gulp.task('release2', ['concat2'], function () {
     //gulp.dest() 是复制文件
 
     gulp.src(['./htmlAdmin/*.html']).pipe(gulp.dest('./dist2/htmlAdmin')); //复制html
-    gulp.src('./public/Aadmin-css/**/*.*').pipe(gulp.dest('./dist2/public/admin-css'));  //复制css
+    gulp.src('./public/admin-css/**/*.*').pipe(gulp.dest('./dist2/public/admin-css'));  //复制css
     gulp.src('./public/admin-js/**/*.*').pipe(gulp.dest('./dist2/public/admin-js/'));  //复制js
     gulp.src('./public/admin-images/**/*.*')
         .pipe(img())                     // 压缩图片

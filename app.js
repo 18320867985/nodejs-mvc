@@ -8,6 +8,7 @@ var port = 3000;
 var express = require('express');
 var app = module.exports = express();
 
+
 // session
 var session = require('express-session');
 app.set('trust proxy', 1) // trust first proxy
@@ -38,10 +39,10 @@ app.use("/json", express.static("./json"));
 app.use("/test", express.static("./test"));
 
 // Ç°¶Ë¾²Ì¬ html
-app.use("/", express.static("./html"));
+app.use("/static", express.static("./html"));
 
 // ºó¶Ë¾²Ì¬  html
-app.use("/admin", express.static("./htmlAdmin"));
+app.use("/static/admin", express.static("./htmlAdmin"));
 
 // Ç°¶Ë
 app.use("/", require("./controllers/webControllers/_allRouters"));

@@ -5,7 +5,6 @@
  * 
  */
 
-
 var bsDate = (function($) {
 
 	var _init = function() {
